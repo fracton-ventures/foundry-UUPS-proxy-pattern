@@ -1,3 +1,5 @@
+# Foundry UUPS upgrades sample
+Uses open zeppelin upgradeable contracts.
 ## install
 `forge install`
 
