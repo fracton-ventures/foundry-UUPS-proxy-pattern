@@ -7,12 +7,23 @@ Uses OpenZeppelin UUPS proxy pattern.
 `forge test`
 
 ## deploy and verify
+### .env
+PIZZA_ADDRESS is necessary, when deploying ERC1967Proxy.sol.
+Set PIZZA_ADDRESS, after deploying Pizza.sol
+
+```
+INFURA_API_KEY=*****
+PRIVATE_KEY=*****
+ETHERSCAN_API_KEY=*****
+
+PIZZA_ADDRESS=*****
+```
 ### Pizza.sol
-`forge create --rpc-url  https://rinkeby.infura.io/v3/***** --private-key ***** src/Pizza.sol:Pizza --verify`
+`source script/deploy-and-verify-pizza.sh `
 ### ERC1967Proxy.sol
-`forge create --rpc-url  https://rinkeby.infura.io/v3/***** --private-key *****  --constructor-args "<Pizza.sol deployed address>" "" --verify lib/openzeppelin-contracts/contracts/proxy/ERC1967/ERC1967Proxy.sol:ERC1967Proxy`
+`source script/deploy-and-verify-proxy.sh`
 ### PizzaV2.sol
-`forge create --rpc-url  https://rinkeby.infura.io/v3/***** --private-key ***** src/PizzaV2.sol:PizzaV2 --verify`
+`source script/deploy-and-verify-pizzaV2.sh`
 
 
 ## deployed proxy
